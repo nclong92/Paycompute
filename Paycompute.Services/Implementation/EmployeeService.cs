@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Paycompute.Services
+namespace Paycompute.Services.Implementation
 {
     public class EmployeeService : IEmployeeService
     {

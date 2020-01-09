@@ -12,6 +12,8 @@ using Paycompute.Persistence;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Paycompute.Services;
+using Paycompute.Services.Implementation;
 
 namespace Paycompute
 {
@@ -32,6 +34,9 @@ namespace Paycompute
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IEmployeeService, EmployeeService>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
