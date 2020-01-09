@@ -17,11 +17,13 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="wwwroot\images\employee\" />
   </ItemGroup>
 
 
   <ItemGroup>
     <ProjectReference Include="..\Paycompute.Persistence\Paycompute.Persistence.csproj" />
+    <ProjectReference Include="..\Paycompute.Services\Paycompute.Services.csproj" />
   </ItemGroup>
 
 </Project>
