@@ -40,6 +40,13 @@ namespace Paycompute.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var employee = GetById(id);
+            _context.Remove(employee);
+            await _context.SaveChangesAsync();
+        }
+
         public decimal StudentLoanRepaymentAmount(int id, decimal totalAmount)
         {
             throw new NotImplementedException();

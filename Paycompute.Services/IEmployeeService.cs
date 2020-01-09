@@ -12,6 +12,7 @@ namespace Paycompute.Services
         Employee GetById(int employeeId);
         Task UpdateAsync(Employee employee);
         Task UpdateAsync(int id);
+        Task DeleteAsync(int id);
         decimal UnionFees(int id);
         decimal StudentLoanRepaymentAmount(int id, decimal totalAmount);
         IEnumerable<Employee> GetAll();
