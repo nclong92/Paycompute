@@ -61,6 +61,7 @@ namespace Paycompute.Controllers
                     Id = model.Id,
                     EmployeeNo = model.EmployeeNo,
                     FirstName = model.FirstName,
+                    MiddleName = model.MiddleName,
                     LastName = model.LastName,
                     FullName = model.FullName,
                     Gender = model.Gender,
