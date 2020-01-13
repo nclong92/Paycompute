@@ -1,0 +1,38 @@
+﻿@model PaymentRecordCreateViewModel
+
+@{
+    ViewData["Title"] = "Create New Payment";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a asp-action="Index">Payment List</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <a aria-current="page">Create Payment</a>
+                        </li>
+                    </ol>
+                </nav><br /><br />
+                <form method="post" enctype="multipart/form-data" asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right: 0.7em"></i>Save</button>
+                        <a asp-action="Index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right: 0.7em"></i>Back</a>
+                        <br /><br /><br />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

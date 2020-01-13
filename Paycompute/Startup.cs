@@ -37,6 +37,8 @@ namespace Paycompute
 
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<ITaxService, TaxService>();
+            services.AddScoped<IPayComputationService, PayComputationService>();
+            services.AddScoped<INationalInsuranceContributionService, NationalInsuranceContributionService>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
