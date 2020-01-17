@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Paycompute.Entity;
 using Paycompute.Models;
 using Paycompute.Services;
+using RotativaCore;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -128,7 +129,7 @@ namespace Paycompute.Controllers
                 Year = _payComputationService.GetTaxYearById(paymentRecord.TaxYearId).YearOfTax,
                 TaxCode = paymentRecord.TaxCode,
                 HourlyRate = paymentRecord.HourlyRate,
-                
+
                 OvertimeHours = paymentRecord.OvertimeHours,
                 OvertimeRate = _payComputationService.OvertimeRate(paymentRecord.HourlyRate),
                 ContractualEarnings = paymentRecord.ContractualEarnings,
@@ -182,6 +183,16 @@ namespace Paycompute.Controllers
             };
 
             return View(model);
+        }
+
+        public IActionResult GeneratePayslipPdf(int id)
+        {
+            var payslip = new ActionAsPdf("Payslip", new { id = id })
+            {
+                FileName = "payslip.pdf"
+            };
+
+            return payslip;
         }
     }
 }
